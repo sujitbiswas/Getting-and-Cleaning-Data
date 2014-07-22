@@ -26,9 +26,9 @@ from the original feature vector set
 
 `mean replaced with Mean & std replaced with StandardDev`
 
-Only Column having ".*Mean.*|.*StandardDev.*" as regular expression selects 86 features from the original data set.
-Combined with subject identifiers `Subject` and activity labels `Activity`, this makes up the
-86 variables of the processed raw data set.
+Only Column having ".\*Mean.\*|.\*StandardDev.\*" as regular expression selects 79 features from the original data set.
+Combined with subject identifiers `subject` and activity labels `activity`, this makes up the
+81 variables of the processed raw data set.
 
 The training and test subsets of the original dataset were combined to produce final raw dataset.
 
@@ -37,9 +37,10 @@ The training and test subsets of the original dataset were combined to produce f
 Tidy data set contains the average of all feature standard deviation and mean values of the raw dataset. 
 Original variable names were modified in the follonwing way:
 
- 1. Replaced `-mean` with `Mean`
- 2. Replaced `-std` with `StandardDev`
- 3. Removed parenthesis `-()`
+ 1. Replaced `-mean` with `-Mean`
+ 2. Replaced `-std` with `-StandardDev`
+ 3. Removed parenthesis `()`
+ 4. Removed all '-' from the variable names at the end
 
 
 It should be noted that the variable names are formatted in camelCase, as described in 
@@ -54,96 +55,94 @@ It should be noted that the variable names are formatted in camelCase, as descri
  `tBodyAcc-mean()-X` | `tBodyAccMeanX`
  `tBodyAcc-mean()-Y` | `tBodyAccMeanY`
  `tBodyAcc-mean()-Z` | `tBodyAccMeanZ`
- `tBodyAcc-std()-X`  | `tBodyAccStdX`
- `tBodyAcc-std()-Y`  | `tBodyAccStdY`
- `tBodyAcc-std()-Z`  | `tBodyAccStdZ`
+ `tBodyAcc-std()-X`  | `tBodyAccStandardDevX`
+ `tBodyAcc-std()-Y`  | `tBodyAccStandardDevY`
+ `tBodyAcc-std()-Z`  | `tBodyAccStandardDevZ`
 
 
- [1] "Activity"                          
- [2] "Subject"                           
- [3] "tBodyAcc-Mean-X"                   
- [4] "tBodyAcc-Mean-Y"                   
- [5] "tBodyAcc-Mean-Z"                   
- [6] "tBodyAcc-StandardDev-X"            
- [7] "tBodyAcc-StandardDev-Y"            
- [8] "tBodyAcc-StandardDev-Z"            
- [9] "tGravityAcc-Mean-X"                
-[10] "tGravityAcc-Mean-Y"                
-[11] "tGravityAcc-Mean-Z"                
-[12] "tGravityAcc-StandardDev-X"         
-[13] "tGravityAcc-StandardDev-Y"         
-[14] "tGravityAcc-StandardDev-Z"         
-[15] "tBodyAccJerk-Mean-X"               
-[16] "tBodyAccJerk-Mean-Y"               
-[17] "tBodyAccJerk-Mean-Z"               
-[18] "tBodyAccJerk-StandardDev-X"        
-[19] "tBodyAccJerk-StandardDev-Y"        
-[20] "tBodyAccJerk-StandardDev-Z"        
-[21] "tBodyGyro-Mean-X"                  
-[22] "tBodyGyro-Mean-Y"                  
-[23] "tBodyGyro-Mean-Z"                  
-[24] "tBodyGyro-StandardDev-X"           
-[25] "tBodyGyro-StandardDev-Y"           
-[26] "tBodyGyro-StandardDev-Z"           
-[27] "tBodyGyroJerk-Mean-X"              
-[28] "tBodyGyroJerk-Mean-Y"              
-[29] "tBodyGyroJerk-Mean-Z"              
-[30] "tBodyGyroJerk-StandardDev-X"       
-[31] "tBodyGyroJerk-StandardDev-Y"       
-[32] "tBodyGyroJerk-StandardDev-Z"       
-[33] "tBodyAccMag-Mean"                  
-[34] "tBodyAccMag-StandardDev"           
-[35] "tGravityAccMag-Mean"               
-[36] "tGravityAccMag-StandardDev"        
-[37] "tBodyAccJerkMag-Mean"              
-[38] "tBodyAccJerkMag-StandardDev"       
-[39] "tBodyGyroMag-Mean"                 
-[40] "tBodyGyroMag-StandardDev"          
-[41] "tBodyGyroJerkMag-Mean"             
-[42] "tBodyGyroJerkMag-StandardDev"      
-[43] "fBodyAcc-Mean-X"                   
-[44] "fBodyAcc-Mean-Y"                   
-[45] "fBodyAcc-Mean-Z"                   
-[46] "fBodyAcc-StandardDev-X"            
-[47] "fBodyAcc-StandardDev-Y"            
-[48] "fBodyAcc-StandardDev-Z"            
-[49] "fBodyAcc-MeanFreq-X"               
-[50] "fBodyAcc-MeanFreq-Y"               
-[51] "fBodyAcc-MeanFreq-Z"               
-[52] "fBodyAccJerk-Mean-X"               
-[53] "fBodyAccJerk-Mean-Y"               
-[54] "fBodyAccJerk-Mean-Z"               
-[55] "fBodyAccJerk-StandardDev-X"        
-[56] "fBodyAccJerk-StandardDev-Y"        
-[57] "fBodyAccJerk-StandardDev-Z"        
-[58] "fBodyAccJerk-MeanFreq-X"           
-[59] "fBodyAccJerk-MeanFreq-Y"           
-[60] "fBodyAccJerk-MeanFreq-Z"           
-[61] "fBodyGyro-Mean-X"                  
-[62] "fBodyGyro-Mean-Y"                  
-[63] "fBodyGyro-Mean-Z"                  
-[64] "fBodyGyro-StandardDev-X"           
-[65] "fBodyGyro-StandardDev-Y"           
-[66] "fBodyGyro-StandardDev-Z"           
-[67] "fBodyGyro-MeanFreq-X"              
-[68] "fBodyGyro-MeanFreq-Y"              
-[69] "fBodyGyro-MeanFreq-Z"              
-[70] "fBodyAccMag-Mean"                  
-[71] "fBodyAccMag-StandardDev"           
-[72] "fBodyAccMag-MeanFreq"              
-[73] "fBodyBodyAccJerkMag-Mean"          
-[74] "fBodyBodyAccJerkMag-StandardDev"   
-[75] "fBodyBodyAccJerkMag-MeanFreq"      
-[76] "fBodyBodyGyroMag-Mean"             
-[77] "fBodyBodyGyroMag-StandardDev"      
-[78] "fBodyBodyGyroMag-MeanFreq"         
-[79] "fBodyBodyGyroJerkMag-Mean"         
-[80] "fBodyBodyGyroJerkMag-StandardDev"  
-[81] "fBodyBodyGyroJerkMag-MeanFreq"     
-[82] "angletBodyAccMean,gravity"         
-[83] "angletBodyAccJerkMean,gravityMean"
-[84] "angletBodyGyroMean,gravityMean"    
-[85] "angletBodyGyroJerkMean,gravityMean"
-[86] "angleX,gravityMean"                
-[87] "angleY,gravityMean"                
-[88] "angleZ,gravityMean" 
+### All the variables are listed below
+
+
+[1] "tBodyAccMeanX"                  
+ [2] "tBodyAccMeanY"                  
+ [3] "tBodyAccMeanZ"                  
+ [4] "tBodyAccStandardDevX"           
+ [5] "tBodyAccStandardDevY"           
+ [6] "tBodyAccStandardDevZ"           
+ [7] "tGravityAccMeanX"               
+ [8] "tGravityAccMeanY"               
+ [9] "tGravityAccMeanZ"               
+[10] "tGravityAccStandardDevX"        
+[11] "tGravityAccStandardDevY"        
+[12] "tGravityAccStandardDevZ"        
+[13] "tBodyAccJerkMeanX"              
+[14] "tBodyAccJerkMeanY"              
+[15] "tBodyAccJerkMeanZ"              
+[16] "tBodyAccJerkStandardDevX"       
+[17] "tBodyAccJerkStandardDevY"       
+[18] "tBodyAccJerkStandardDevZ"       
+[19] "tBodyGyroMeanX"                 
+[20] "tBodyGyroMeanY"                 
+[21] "tBodyGyroMeanZ"                 
+[22] "tBodyGyroStandardDevX"          
+[23] "tBodyGyroStandardDevY"          
+[24] "tBodyGyroStandardDevZ"          
+[25] "tBodyGyroJerkMeanX"             
+[26] "tBodyGyroJerkMeanY"             
+[27] "tBodyGyroJerkMeanZ"             
+[28] "tBodyGyroJerkStandardDevX"      
+[29] "tBodyGyroJerkStandardDevY"      
+[30] "tBodyGyroJerkStandardDevZ"      
+[31] "tBodyAccMagMean"                
+[32] "tBodyAccMagStandardDev"         
+[33] "tGravityAccMagMean"             
+[34] "tGravityAccMagStandardDev"      
+[35] "tBodyAccJerkMagMean"            
+[36] "tBodyAccJerkMagStandardDev"     
+[37] "tBodyGyroMagMean"               
+[38] "tBodyGyroMagStandardDev"        
+[39] "tBodyGyroJerkMagMean"           
+[40] "tBodyGyroJerkMagStandardDev"    
+[41] "fBodyAccMeanX"                  
+[42] "fBodyAccMeanY"                  
+[43] "fBodyAccMeanZ"                  
+[44] "fBodyAccStandardDevX"           
+[45] "fBodyAccStandardDevY"           
+[46] "fBodyAccStandardDevZ"           
+[47] "fBodyAccMeanFreqX"              
+[48] "fBodyAccMeanFreqY"              
+[49] "fBodyAccMeanFreqZ"              
+[50] "fBodyAccJerkMeanX"              
+[51] "fBodyAccJerkMeanY"              
+[52] "fBodyAccJerkMeanZ"              
+[53] "fBodyAccJerkStandardDevX"       
+[54] "fBodyAccJerkStandardDevY"       
+[55] "fBodyAccJerkStandardDevZ"       
+[56] "fBodyAccJerkMeanFreqX"          
+[57] "fBodyAccJerkMeanFreqY"          
+[58] "fBodyAccJerkMeanFreqZ"          
+[59] "fBodyGyroMeanX"                 
+[60] "fBodyGyroMeanY"                 
+[61] "fBodyGyroMeanZ"                 
+[62] "fBodyGyroStandardDevX"          
+[63] "fBodyGyroStandardDevY"          
+[64] "fBodyGyroStandardDevZ"          
+[65] "fBodyGyroMeanFreqX"             
+[66] "fBodyGyroMeanFreqY"             
+[67] "fBodyGyroMeanFreqZ"             
+[68] "fBodyAccMagMean"                
+[69] "fBodyAccMagStandardDev"         
+[70] "fBodyAccMagMeanFreq"            
+[71] "fBodyBodyAccJerkMagMean"        
+[72] "fBodyBodyAccJerkMagStandardDev" 
+[73] "fBodyBodyAccJerkMagMeanFreq"    
+[74] "fBodyBodyGyroMagMean"           
+[75] "fBodyBodyGyroMagStandardDev"    
+[76] "fBodyBodyGyroMagMeanFreq"       
+[77] "fBodyBodyGyroJerkMagMean"       
+[78] "fBodyBodyGyroJerkMagStandardDev"
+[79] "fBodyBodyGyroJerkMagMeanFreq"   
+[80] "activity"                       
+[81] "subject"
+
+
