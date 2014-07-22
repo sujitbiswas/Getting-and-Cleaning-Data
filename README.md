@@ -52,6 +52,6 @@ colnames(tidy) <- gsub('-', '', colnames(tidy))
 activityLabels = read.csv("activity_labels.txt", sep="", header=FALSE)
 tidy$activity = factor(tidy$activity, levels=c(1,2,3,4,5,6),labels=activityLabels$V2)
 
-### Wrtie tidy data
+### Write tidy data
 write.table(tidy, "tidy.txt", sep="\t")
 
