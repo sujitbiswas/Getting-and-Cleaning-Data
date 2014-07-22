@@ -40,7 +40,7 @@ Original variable names were modified in the follonwing way:
  1. Replaced `-mean` with `-Mean`
  2. Replaced `-std` with `-StandardDev`
  3. Removed parenthesis `()`
- 4. Removed all '-' from the variable names at the end
+ 4. Removed all `-` from the variable names at the end
 
 
 It should be noted that the variable names are formatted in camelCase, as described in 
